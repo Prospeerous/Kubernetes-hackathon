@@ -121,11 +121,8 @@ For cloud deployment (e.g., on GKE, AKS, EKS):
 
 ## 📷 Media 
 
-> **Screenshots:**
-
-| Widgetario Architecture | Working App UI |
-|-------------------------|----------------|
-| ![](img/widgetario-architecture.png) | ![](img/widgetario-solution-2.png) |
+ **Screenshots:**
+   Here are screenshots of the various sections we took from our hackathon exercise,you can access them at **Kubernetes-lab Images** folder.
 
 ---
 
