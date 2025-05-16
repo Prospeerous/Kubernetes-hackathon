@@ -30,8 +30,8 @@ To run this project on your local Kubernetes setup (e.g., Minikube or Docker Des
 
 1. **Clone the repository**  
    ```bash
-   git clone https://github.com/your-username/widgetario-k8s-hackathon.git
-   cd widgetario-k8s-hackathon
+   git clone https://github.com/Prospeerous/Kubernetes-hackathon.git
+   cd Kubernetes-hackathon
    ```
 
 2. **Start your Kubernetes cluster**
@@ -63,6 +63,50 @@ To run this project on your local Kubernetes setup (e.g., Minikube or Docker Des
      ```bash
      kubectl apply -f hackathon/part-5/
      ```
+   - Part 6:
+     ```bash
+      kubectl apply -f part-6/monitoring
+      kubectl apply -f part-6/ingress-controller -f part-6/widgetario
+      files\grafana-dashboard.json
+      kubectl apply -f part-6/logging
+      files\kibana-dashboard.ndjson
+     ```
+   - Part 7
+     ```bash
+     kubectl scale deploy/products-api deploy/stock-api deploy/web sts/products-db --replicas 0
+      helm install widg-uat -n widg-uat --create-namespace -f files/helm/uat.yaml part-7/helm/widgetario
+      kubectl get all -n widg-uat
+     
+      # On Windows (run as Admin)
+      ./scripts/add-to-hosts.ps1 widgetario.uat 127.0.0.1
+      ./scripts/add-to-hosts.ps1 api.widgetario.uat 127.0.0.1
+
+      # OR on Linux/macOS
+      ./scripts/add-to-hosts.sh widgetario.uat 127.0.0.1
+      ./scripts/add-to-hosts.sh api.widgetario.uat 127.0.0.1
+
+      curl -k https://api.widgetario.uat/products
+
+      kubectl apply -f part-7/infrastructure
+      git remote add . http://localhost:30031/kiamol/kiamol.git
+      git push main
+
+      kubectl -n infra create secret docker-registry registry-creds --docker-server=$REGISTRY_SERVER --docker-username=$REGISTRY_USER --docker-password=$REGISTRY_PASSWORD
+      kubectl -n infra create configmap build-config --from-literal=REGISTRY=docker.io  --from-literal=REPOSITORY=$REGISTRY_USER
+
+      kubectl rollout restart deploy/jenkins -n infra
+     
+      # On Windows (run as Admin)
+      ./scripts/add-to-hosts.ps1 widgetario.smoke 127.0.0.1
+      ./scripts/add-to-hosts.ps1 api.widgetario.smoke 127.0.0.1
+      
+      # OR on Linux/macOS
+      ./scripts/add-to-hosts.sh widgetario.smoke 127.0.0.1
+      ./scripts/add-to-hosts.sh api.widgetario.smoke 127.0.0.1
+
+      curl -k https://api.widgetario.smoke/products ## test app at http://widgetario.smoke
+     ```
+
 
 ---
 
