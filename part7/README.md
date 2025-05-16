@@ -6,7 +6,7 @@ kubectl scale deploy/products-api deploy/stock-api deploy/web sts/products-db --
 _Deploy the Helm chart to a new namespace using a sample variables file:_
 
 ```
-helm install widg-uat -n widg-uat --create-namespace -f files/helm/uat.yaml hackathon/solution-part-7/helm/widgetario
+helm install widg-uat -n widg-uat --create-namespace -f files/helm/uat.yaml part-7/helm/widgetario
 ```
 
 _Check the objects:_
