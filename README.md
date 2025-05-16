@@ -1,6 +1,6 @@
 # 🚀 Widgetario Kubernetes Hackathon Project
 
-Welcome to our Hackathon submission! This project showcases a complete Kubernetes deployment of the **Widgetario** application—a fictional company selling gadgets. The app is containerized, configured, and deployed across multiple parts, each focusing on critical Kubernetes skills.
+Welcome to our Hackathon submission! This project showcases a complete Kubernetes deployment of the **Widgetario** application, a fictional company selling gadgets. The app is containerized, configured, and deployed across multiple parts, each focusing on critical Kubernetes skills.
 
 ---
 
@@ -132,7 +132,7 @@ For cloud deployment (e.g., on GKE, AKS, EKS):
 ## 🔐 Repository Access
 
 - ✅ This repository is **public**
-- If you face access issues, please contact me directly or use the GitHub username: `your-username`
+- If you face access issues, please contact me directly or use the GitHub username: `(https://github.com/Prospeerous/Kubernetes-hackathon/tree/main)`
 
 ---
 
