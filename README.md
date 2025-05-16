@@ -132,7 +132,7 @@ For cloud deployment (e.g., on GKE, AKS, EKS):
 ## 🔐 Repository Access
 
 - ✅ This repository is **public**
-- If you face access issues, please contact me directly or use the GitHub username: `your-username`
+- If you face access issues, please contact me directly or use the GitHub username: `(https://github.com/Prospeerous/Kubernetes-hackathon/tree/main)`
 
 ---
 
