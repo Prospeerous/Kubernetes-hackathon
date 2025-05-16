@@ -1,0 +1,9 @@
+# configmaps/web-config.yaml
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: web-config
+data:
+  PRODUCTS_API_URL: http://products-api
+  STOCK_API_URL: http://stock-api
+

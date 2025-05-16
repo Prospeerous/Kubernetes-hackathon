@@ -1,0 +1,23 @@
+# deployments/products-db/deployment.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: products-db
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: products-db
+  template:
+    metadata:
+      labels:
+        app: products-db
+    spec:
+      containers:
+        - name: postgres
+          image: postgres:13
+          ports:
+            - containerPort: 5432
+          envFrom:
+            - secretRef:
+                name: products-db-secret

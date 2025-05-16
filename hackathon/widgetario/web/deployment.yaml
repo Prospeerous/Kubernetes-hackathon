@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: web
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: web
+  template:
+    metadata:
+      labels:
+        app: web
+    spec:
+      containers:
+        - name: web
+          image: courselabs/web:1.0.0
+          ports:
+            - containerPort: 80
+env:
+- name: PRODUCTS_API_URL
+  valueFrom:
+    configMapKeyRef:
+      name: web-config
+      key: PRODUCTS_API_URL
+- name: STOCK_API_URL
+  valueFrom:
+    configMapKeyRef:
+      name: web-config
+      key: STOCK_API_URL
+

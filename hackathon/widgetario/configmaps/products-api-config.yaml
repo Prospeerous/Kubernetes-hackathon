@@ -1,0 +1,10 @@
+# configmaps/products-api-config.yaml
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: products-api-config
+data:
+  DB_HOST: products-db
+  DB_PORT: "5432"
+  DB_NAME: widgetario
+
