@@ -39,29 +39,29 @@ To run this project on your local Kubernetes setup (e.g., Minikube or Docker Des
 3. **Apply manifests step-by-step:**
    - Part 1:
      ```bash
-     kubectl apply -f hackathon/part-1/
+     kubectl apply -f part-1/
      ```
    - Part 2:
      ```bash
-     kubectl apply -f hackathon/part-2/
+     kubectl apply -f part-2/
      ```
    - Part 3:
      ```bash
      kubectl delete deploy products-db
      kubectl delete svc products-db
      kubectl delete pvc -l app=products-db
-     kubectl apply -f hackathon/part-3/
+     kubectl apply -f part-3/
      kubectl rollout restart deploy/products-api deploy/stock-api
      ```
    - Part 4:
      ```bash
-     kubectl apply -f hackathon/part-4/
+     kubectl apply -f part-4/
      ./scripts/add-to-hosts.sh widgetario.local 127.0.0.1
      ./scripts/add-to-hosts.sh api.widgetario.local 127.0.0.1
      ```
    - Part 5:
      ```bash
-     kubectl apply -f hackathon/part-5/
+     kubectl apply -f part-5/
      ```
    - Part 6:
      ```bash
